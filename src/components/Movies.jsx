@@ -10,7 +10,7 @@ return(
         <Header/>
         <div>
             <Filter></Filter>
-            <MovieList></MovieList>
+            <MovieList movies={props.movies}></MovieList>
             <Favorites></Favorites>
         </div>    
     </div>

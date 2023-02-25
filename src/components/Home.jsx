@@ -16,7 +16,7 @@ const Home = (props) => {
         console.log("cleared search term");
     }
     return (
-        <div>
+        <div className="bg-red-400">
             <h1>Movie Browser</h1>
             Title:<input type="search" onChange={inputHandler}></input>
             <Link to="/movies">
