@@ -5,41 +5,24 @@ import Movies from './components/Movies.jsx';
 import MovieDetails from './components/MovieDetails.jsx';
 import { Routes, Route } from 'react-router-dom';
 import {useEffect, useState} from "react";
+import {cloneDeep} from "lodash";
 
 function App() {
   const[movies,setMovies] = useState([])
   const[searchTerm, setSearchTerm] = useState("");
-
-  // useEffect(  () => {
-  //   const getData = async () => {
-  //     try {
-  //       const url = "https://www.randyconnolly.com/funwebdev/3rd/api/movie/movies-brief.php?limit=200";
-  //       const response = await fetch(url);
-  //       const data = await response.json();
-  //       console.log(data);
-  //       setMovies(data);
-  //       localStorage.setItem("movies",JSON.stringify(movies));
-  //       console.log("Got movies from API and stored it!");
-  //     }
-  //     catch (err) {
-  //       console.error(err);
-  //     }
-  //   };
-  //   const localMovies = localStorage.getItem("movies");
-  //   console.log(localMovies);
-  //   if(!localMovies) {
-  //     getData();
-
-  //   } else {
-  //     setMovies(localMovies);
-  //     console.log(localMovies);
-  //     console.log("Got movies from localStorage!");
-  //   }
-    
-  // }, [] );
+  const[favorites,setFavorites] = useState([]);
+  const[selectedMovie,setSelectedMovie] = useState({});
 
   const changeSearchTerm = (newSearchTerm) => {
     setSearchTerm(newSearchTerm);
+  }
+  const addFavorite = (movie) => {
+    const copyFavorites = cloneDeep(favorites);
+    copyFavorites.push(movie);
+    setFavorites(copyFavorites);
+  }
+  const changeSelectedMovie = (movie) => {
+    setSelectedMovie(cloneDeep(movie));
   }
 
   useEffect( () => {
@@ -64,9 +47,9 @@ function App() {
   return (
     <main>
       <Routes>
-        <Route path='/' exact element={<Home setSearchTerm = {setSearchTerm}/>} />
-        <Route path='/movies' exact element={<Movies movies={movies} searchTerm={searchTerm}/>} />
-        <Route path='/movieDetails' exact element={<MovieDetails movies={movies}/>} />
+        <Route path='/' exact element={<Home changeSearchTerm = {changeSearchTerm}/>} />
+        <Route path='/movies' exact element={<Movies movies={movies} searchTerm={searchTerm} changeSelectedMovie={changeSelectedMovie}/>} />
+        <Route path='/movieDetails' exact element={<MovieDetails movie={selectedMovie} addFavorite={addFavorite}/>} />
       </Routes>
     </main>
   );
