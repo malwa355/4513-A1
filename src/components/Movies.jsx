@@ -3,16 +3,24 @@ import Filter from "./Filter.jsx";
 import Header from './Header.jsx';
 import MovieList from "./MovieList.jsx";
 import Favorites from "./Favorites.jsx"; 
+import Panel from "./Panel.jsx"; 
 
 const Movies = (props) => {
 return(
     <div>
         <Header/>
-        <div>
-            <Filter></Filter>
-            <MovieList movies={props.movies}></MovieList>
-            <Favorites></Favorites>
-        </div>    
+        <div className="inline-grid grid-cols-3">
+            <Panel>
+                <Filter/>
+            </Panel>
+            <div>
+                <MovieList movies={props.movies} changeSelectedMovie={props.changeSelectedMovie}></MovieList>
+                <Favorites></Favorites>
+            </div> 
+            <Panel>
+                <Favorites/>
+            </Panel>  
+        </div> 
     </div>
 )
 }
