@@ -5,7 +5,7 @@ import React from "react";
 const panel = (props) => {
 
     return (
-        <div>
+        <div className="fixed mt-11">
             {props.children}
         </div>
     )

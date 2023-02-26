@@ -9,7 +9,7 @@ const Movies = (props) => {
 return(
     <div>
         <Header/>
-        <div className="inline-grid grid-cols-3">
+        <div className="">
             <Panel>
                 <Filter/>
             </Panel>
