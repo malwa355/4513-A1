@@ -45,10 +45,10 @@ function App() {
   }, []); 
   
   return (
-    <main>
+    <main className="bg-sky-800">
       <Routes>
         <Route path='/' exact element={<Home changeSearchTerm = {changeSearchTerm}/>} />
-        <Route path='/movies' exact element={<Movies movies={movies} searchTerm={searchTerm} changeSelectedMovie={changeSelectedMovie}/>} />
+        <Route path='/movies' exact element={<Movies movies={movies} searchTerm={searchTerm} changeSelectedMovie={changeSelectedMovie} favorites={favorites} addFavorite={addFavorite} />}/>
         <Route path='/movieDetails' exact element={<MovieDetails movie={selectedMovie} addFavorite={addFavorite}/>} />
       </Routes>
     </main>

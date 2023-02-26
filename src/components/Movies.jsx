@@ -10,15 +10,14 @@ return(
     <div>
         <Header/>
         <div className="">
-            <Panel>
+            <Panel id="filter">
                 <Filter/>
             </Panel>
-            <div>
-                <MovieList movies={props.movies} changeSelectedMovie={props.changeSelectedMovie}></MovieList>
-                <Favorites></Favorites>
+            <div className="w-3/4">
+                <MovieList movies={props.movies} changeSelectedMovie={props.changeSelectedMovie} addFavorite={props.addFavorite}></MovieList>
             </div> 
-            <Panel>
-                <Favorites/>
+            <Panel id="favorites">
+                <Favorites favorites={props.favorites}/>
             </Panel>  
         </div> 
     </div>
