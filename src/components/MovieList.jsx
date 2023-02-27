@@ -7,9 +7,9 @@ const MovieList = (props) => {
     return (
 
             <div>
-                <h1 className="text-center">List / Matches</h1>
-                <ul className="inline-grid grid-cols-1 ml-96" >
-                    <li className="inline-grid grid-cols-7 ">
+                <h1 className="text-center fixed bg-slate-500 w-screen h-10 mt-6">List / Matches</h1>
+                <ul className="inline-grid grid-cols-1 ml-96 mt-16" >
+                    <li className="inline-grid grid-cols-7">
                         <div></div>
                         <div className="m-auto">title</div>
                         <div className="m-auto">Year</div>
@@ -18,7 +18,7 @@ const MovieList = (props) => {
                         <div></div>
                         <div></div>
                     </li>
-                    {props.movies.map( (m) => <MovieListItem key={m.id} movie={m} changeSelectedMovie={props.changeSelectedMovie} addFavorite={props.addFavorite}/>)}
+                    {props.movies.map( (m) => <MovieListItem key={m.id} movie={m} changeSelectedMovie={props.changeSelectedMovie} addFavorite={props.addFavorite} />)}
                 </ul>
             </div>
 
