@@ -17,12 +17,21 @@ function App() {
     setSearchTerm(newSearchTerm);
   }
   const addFavorite = (movie) => {
-    const copyFavorites = cloneDeep(favorites);
-    copyFavorites.push(movie);
-    setFavorites(copyFavorites);
+    if(favorites.find(m => m.id === movie.id)){
+      const copyFavorites = cloneDeep(favorites);
+      copyFavorites.push(movie);
+      setFavorites(copyFavorites);
+    }
   }
   const changeSelectedMovie = (movie) => {
     setSelectedMovie(cloneDeep(movie));
+  }
+  const rateMovie = (id,rating) =>{
+    const copyMovies = movies;
+    const movieIndex = copyMovies.findIndex(m=>m.id===id);
+    copyMovies[movieIndex].userRating = rating;
+    setMovies(copyMovies);
+    console.log("updated " + rating);
   }
 
   useEffect( () => {
@@ -32,8 +41,12 @@ function App() {
     fetch(url)
       .then( resp => resp.json() )
       .then( data => {
-        setMovies(data);
-        localStorage.setItem("movies",JSON.stringify(data));
+        
+        //REFERENCE FROM STACK OVERFLOW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!vvvv
+        const addedProperty = data.map(movie => {return({ ...movie, userRating: -1 })})
+        setMovies(addedProperty);
+        localStorage.setItem("movies",JSON.stringify(addedProperty));
+        
         console.log("Got movies from API and stored it!");
       })
       .catch( err => console.error(err));
@@ -49,7 +62,7 @@ function App() {
       <Routes>
         <Route path='/' exact element={<Home changeSearchTerm = {changeSearchTerm}/>} />
         <Route path='/movies' exact element={<Movies movies={movies} searchTerm={searchTerm} changeSelectedMovie={changeSelectedMovie} favorites={favorites} addFavorite={addFavorite} />}/>
-        <Route path='/movieDetails' exact element={<MovieDetails movie={selectedMovie} addFavorite={addFavorite}/>} />
+        <Route path='/movieDetails' exact element={<MovieDetails movie={selectedMovie} rateMovie={rateMovie} favorites={favorites} addFavorite={addFavorite}/>} />
       </Routes>
     </main>
   );
