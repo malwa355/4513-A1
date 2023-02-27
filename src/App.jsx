@@ -34,7 +34,7 @@ function App() {
     copyMovies[movieIndex].userRating = rating;
     setMovies(copyMovies);
     console.log("updated " + rating);
-
+  }
   const filter = (field, term) => {
     console.log(field);
     console.log(term.inputLower);
