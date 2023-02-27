@@ -1,6 +1,7 @@
 import {useState} from "react";
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import logo from '../images/StackFilms.png';
 
 const customStyles = {
     content: {
@@ -31,7 +32,7 @@ const Header = (props) => {
     }
     return (
         <div className="Header flex bg-violet-700 fixed w-screen h-10">
-            <img className="flex-auto" src = {logoAddress}/>
+            <div className="h-24"><img className="flex-auto h-24" src = {logo}/></div>
             <button className="flex-end mr-10 rounded bg-blue-500 hover:bg-blue-700 text-white font-bold" onClick={openModal}>About</button>
             <Modal
                 isOpen={modalIsOpen}
