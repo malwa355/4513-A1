@@ -12,7 +12,7 @@ const Rating = (props) => {
     arr.fill(1,0,fullStarCount);
     let halfStar = rounded;
     console.log(halfStar);
-    arr[fullStarCount] = halfStar;
+    if(fullStarCount!=10){arr[fullStarCount] = halfStar;}
     console.log(props.movie.ratings.average);
     console.log(arr);
     return (
