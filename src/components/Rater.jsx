@@ -33,7 +33,7 @@ const Rater = (props) => {
             {arr.map((s,i)=>{
                 if(s%1===0.5){return(<i className="fa-solid fa-star-half-stroke" key={i} style={{color:"orange"}}></i>)}
                 else if(s===1 || s>fullStarCount ){return(<i className="fa-solid fa-star" key={i} style={{color:"orange"}}></i>)}
-                else if(i){return(<i className="fa-regular fa-star" key={i} style={{color:"orange"}}></i>)}
+                else {return(<i className="fa-regular fa-star" key={i} style={{color:"orange"}}></i>)}
             })}
             </div>
         )
