@@ -9,10 +9,10 @@ const Filter = (props) => {
     const [ratingDisabled ,setRatingDisabled] = useState(true);
     const [titleInput, setTitleInput] = useState("");
     const [genreInput, setGenreInput] = useState("");
-    const [upperYearInput, setUpperYearInput] = useState("");
-    const [lowerYearInput, setLowerYearInput] = useState("");
-    const [upperRatingInput, setUpperRatingInput] = useState("");
-    const [lowerRatingInput, setLowerRatingInput] = useState("");
+    const [upperYearInput, setUpperYearInput] = useState("2023");
+    const [lowerYearInput, setLowerYearInput] = useState("1940");
+    const [upperRatingInput, setUpperRatingInput] = useState("10");
+    const [lowerRatingInput, setLowerRatingInput] = useState("0");
 
     const handleFilterChoice = e => {
         setTitleDisabled(true);
@@ -48,21 +48,21 @@ const Filter = (props) => {
         setUpperRatingInput(e.target.value)
     }
     const handleFilter = () => {
-        if(titleDisabled == false) {
-            
-        } else if (genreDisabled == false) {
-
-        } else if (yearDisabled == false) {
-
-        } else if (ratingDisabled == false) {
-                
+        if(titleDisabled === false) {
+            props.filter("title", {"input":titleInput});
+        } else if (genreDisabled === false) {
+            props.filter("genre", {"input":genreInput});
+        } else if (yearDisabled === false) {
+            props.filter("year", {"inputLower": lowerYearInput, "inputUpper": upperYearInput});
+        } else if (ratingDisabled === false) {
+            props.filter("rating", {"inputLower": lowerRatingInput, "inputUpper": upperRatingInput});             
         }
     }
     const handleClear = () => {
-
+        props.clear();
     }
     return (
-        <form className="bg-slate-500 h-screen">
+        <div className="bg-slate-500 h-screen">
             <label className="block">
                 <input type="radio" defaultChecked={true} id="title" onChange={handleFilterChoice} name="filter"/>
                 Title
@@ -77,21 +77,21 @@ const Filter = (props) => {
                 <input type="radio" name="filter" id="year" onChange={handleFilterChoice} />
                 Year
                 <div className="flex flex-col justify-between">
-                <label className="block ml-16">Less<input type="number" disabled={yearDisabled} onChange={handleLowerYearChange} value={lowerYearInput} className="ml-8 disabled:bg-slate-400"/></label>
-                <label className="block ml-16">Greater<input type="number" disabled={yearDisabled} onChange={handleUpperYearChange} value={upperYearInput} className="ml-[9px] disabled:bg-slate-400"/></label>
+                <label className="block ml-16">Less Than: {lowerYearInput}<input type="range" min="1940" max="2023" disabled={yearDisabled} onChange={handleLowerYearChange} value={lowerYearInput} className="ml-8 disabled:bg-slate-400"/></label>
+                <label className="block ml-16">Greater Than: {upperYearInput}<input type="range" min="1940" max="2023" disabled={yearDisabled} onChange={handleUpperYearChange} value={upperYearInput} className="ml-[9px] disabled:bg-slate-400"/></label>
                 </div>
             </label>
             <label className="block">
                 <input type="radio" name="filter" id="rating" onChange={handleFilterChoice}/>
                 rating
-                <label className="block ml-16">Less<input type="number"  disabled={ratingDisabled} onChange={handleLowerRatingChange} value={lowerRatingInput} className="ml-8 disabled:bg-slate-400"/></label>
-                <label className="block ml-16">Greater<input type="number"disabled={ratingDisabled} onChange={handleUpperRatingChange} value={upperRatingInput} className="ml-[9px] disabled:bg-slate-400"/></label>
+                <label className="block ml-16">Less Than: {lowerRatingInput}<input type="range" min="3" max="10" disabled={ratingDisabled} onChange={handleLowerRatingChange} value={lowerRatingInput} className="ml-8 disabled:bg-slate-400"/></label>
+                <label className="block ml-16">Greater Than: {upperRatingInput}<input type="range" min="3" max="10" disabled={ratingDisabled} onChange={handleUpperRatingChange} value={upperRatingInput} className="ml-[9px] disabled:bg-slate-400"/></label>
             </label>
             <div className="block mt-5">
                 <button className="ml-16" onClick={handleClear}>Clear</button>
                 <button className="ml-16" onClick={handleFilter}>Filter</button>
             </div>
-        </form>
+        </div>
     )
 
 }
