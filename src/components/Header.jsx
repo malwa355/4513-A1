@@ -1,5 +1,3 @@
-import React from "react";
-import logo from "../images/StackFilms.png"
 import {useState} from "react";
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
@@ -33,7 +31,7 @@ const Header = (props) => {
     }
     return (
         <div className="Header flex bg-violet-700 fixed w-screen h-10">
-        <div className="h-32"><img className="flex-auto h-32 rounded-2xl" src={logo} alt="Logo for FilmStack"/></div>
+            <img className="flex-auto" src = {logoAddress}/>
             <button className="flex-end mr-10 rounded bg-blue-500 hover:bg-blue-700 text-white font-bold" onClick={openModal}>About</button>
             <Modal
                 isOpen={modalIsOpen}
