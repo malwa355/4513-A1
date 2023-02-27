@@ -4,17 +4,13 @@ import Rater from "./Rater.jsx";
 
 const Rating = (props) => {
     const fullStarCount = Math.trunc(props.movie.ratings.average);
-    console.log(fullStarCount);
     const arr = new Array(10).fill(null);
     let rounded = props.movie.ratings.average;
     //cite stack overflow for this method vvvv!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     rounded = (Math.round(rounded * 2) / 2).toFixed(1)
     arr.fill(1,0,fullStarCount);
     let halfStar = rounded;
-    console.log(halfStar);
     if(fullStarCount!=10){arr[fullStarCount] = halfStar;}
-    console.log(props.movie.ratings.average);
-    console.log(arr);
     return (
         <div>
             <p>Current Interest: {props.movie.ratings.popularity.toFixed(2)}</p>

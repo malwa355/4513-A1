@@ -17,11 +17,11 @@ function App() {
     setSearchTerm(newSearchTerm);
   }
   const addFavorite = (movie) => {
-    if(favorites.find(m => m.id === movie.id)){
+    // if(favorites.find(m => m.id === movie.id)){ //Need to fix this.
       const copyFavorites = cloneDeep(favorites);
       copyFavorites.push(movie);
       setFavorites(copyFavorites);
-    }
+    // }
   }
   const changeSelectedMovie = (movie) => {
     setSelectedMovie(cloneDeep(movie));
