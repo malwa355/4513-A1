@@ -10,7 +10,6 @@ const Favorites = (props) => {
             {props.favorites.map(f => <FavoritesItem movie={f}/>)}
         </div>
     )
-
 }
 
 export default Favorites;

@@ -10,7 +10,6 @@ const FavoritesItem = (props) => {
             <div className="inline-block">{props.movie.title}</div>
         </Link>
     )
-
 }
 
 export default FavoritesItem;

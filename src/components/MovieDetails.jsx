@@ -12,7 +12,7 @@ const MovieDetails = (props) => {
     }
     return (
         <div>
-            <Header></Header>
+            <Header/>
             <div>
                 <div>
                     <h1>{props.movie.title}</h1>

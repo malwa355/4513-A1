@@ -15,7 +15,7 @@ return(
                 <Filter filter={props.filter} clear={props.clear}/>
             </Panel>
             <div className="w-3/4">
-                <MovieList movies={props.movies} changeSelectedMovie={props.changeSelectedMovie} addFavorite={props.addFavorite} ></MovieList>
+                <MovieList movies={props.movies} changeSelectedMovie={props.changeSelectedMovie} addFavorite={props.addFavorite} cleared={props.cleared} setClear={props.setClear} sort={props.sort} sortDirection={props.sortDirection} lastSorted={props.lastSorted} ></MovieList>
             </div> 
             <Panel id="favorites">
                 <Favorites favorites={props.favorites}/>

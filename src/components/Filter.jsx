@@ -62,7 +62,9 @@ const Filter = (props) => {
         props.clear();
     }
     return (
+        
         <div className="bg-slate-500 h-screen">
+            <h1 className="text-center mb-5">Filter</h1>
             <label className="block">
                 <input type="radio" defaultChecked={true} id="title" onChange={handleFilterChoice} name="filter"/>
                 Title
