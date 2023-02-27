@@ -30,7 +30,7 @@ const MovieDetails = (props) => {
                         <p>Overview: {props.movie.details.overview}</p>
                         <p>Genre(s):</p> <ul>{props.movie.details.genres.map( (g,index) => <li key={index}>{g.name}</li> )}</ul>
                     </div>
-                    <Rating movie={props.movie}></Rating>
+                    <Rating movie={props.movie} rateMovie={props.rateMovie}></Rating>
                 </div>
                 <div>
                     <Link to="/movies"> 
