@@ -19,8 +19,8 @@ const MovieListItem = (props) => {
             </Link>
             <div className="m-auto">{props.movie.release_date.split("-")[0]}</div>
             <div className="m-auto">{props.movie.ratings.average}</div>
-            <div className="m-auto">{props.movie.ratings.popularity}</div>
-            <button onClick={favoriteHandler}>❤</button>
+            <div className="m-auto">{props.movie.ratings.popularity.toFixed(2)}</div>
+            <button onClick={favoriteHandler}><i className="fa-solid fa-heart text-red-900"></i></button>
             <Link to="/movieDetails" onClick={detailsHandler} className="m-auto">
                 <button>View</button>
             </Link>

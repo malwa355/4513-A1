@@ -49,20 +49,17 @@ const MovieList = (props) => {
             }
         }
     }
-    useEffect( () => {
-        props.sort("title","asc");
-      }, []);
     return (
 
             <div>
-                <h1 className="text-center fixed bg-slate-500 w-screen h-10 mt-[40px]">List / Matches</h1>
-                <ul className="inline-grid grid-cols-1 ml-96 mt-20" >
+                <h1 className="text-center fixed bg-dk-blue w-screen h-10 mt-[80px] z-1  font-bold text-xl">Movies</h1>
+                <ul className="inline-grid grid-cols-1 ml-80 mt-32" >
                     <li className="inline-grid grid-cols-7">
                         <div></div>
-                        <div onClick={handleSort} className="m-auto">Title</div>
-                        <div onClick={handleSort} className="m-auto">Year</div>
-                        <div onClick={handleSort} className="m-auto">Rating</div>
-                        <div onClick={handleSort} className="m-auto">Popularity</div>
+                        <div onClick={handleSort} className="m-auto font-bold text-xl">Title</div>
+                        <div onClick={handleSort} className="m-auto font-bold text-xl">Year</div>
+                        <div onClick={handleSort} className="m-auto font-bold text-xl">Rating</div>
+                        <div onClick={handleSort} className="m-auto font-bold text-xl">Popularity</div>
                         <div></div>
                         <div></div>
                     </li>

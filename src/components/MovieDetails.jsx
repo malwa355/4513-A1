@@ -40,7 +40,7 @@ const MovieDetails = (props) => {
                 </div>
             </div>
             <Panel id="favorites">
-                <Favorites favorites={props.favorites}></Favorites>
+                <Favorites favorites={props.favorites} changeSelectedMovie={props.changeSelectedMovie} removeFavorite={props.removeFavorite}/>
             </Panel>
         </div>
     )
