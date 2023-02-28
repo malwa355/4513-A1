@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {Link} from "react-router-dom";
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import logo from '../images/StackFilms.png';
@@ -33,10 +34,10 @@ const Header = (props) => {
     }
     return (
         <div className="flex justify-between bg-black fixed w-screen h-20">
-            <div className="h-24"><img className=" h-24" src = {logo}/></div>
+            <Link to="/" className="h-24"><img className=" h-24" src = {logo}/></Link>
             <div className="font-header font-bold text-3xl mt-5">FILMSTACK</div>
             <div></div><div></div><div></div>
-            <button className=" w-20 h-10 mt-5 mr-10 rounded bg-blue-900 hover:bg-blue-700 font-bold" onClick={openModal}>About</button>
+            <button className=" w-20 h-10 mt-5 mr-10 rounded bg-cyan-600 hover:bg-cyan-400 font-bold" onClick={openModal}>About</button>
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
