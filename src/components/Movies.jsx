@@ -12,13 +12,13 @@ return(
         <Header/>
         <div className="">
             <Panel id="filter">
-                <Filter filter={props.filter} clear={props.clear}/>
+                <Filter filter={props.filter} clear={props.clear} genreList={props.genreList}/>
             </Panel>
-            <div className="w-3/4">
+            <div className="w-5/6">
                 <MovieList movies={props.movies} changeSelectedMovie={props.changeSelectedMovie} addFavorite={props.addFavorite} cleared={props.cleared} setClear={props.setClear} sort={props.sort} sortDirection={props.sortDirection} lastSorted={props.lastSorted} ></MovieList>
             </div> 
             <Panel id="favorites">
-                <Favorites favorites={props.favorites}/>
+                <Favorites favorites={props.favorites} changeSelectedMovie={props.changeSelectedMovie} removeFavorite={props.removeFavorite}/>
             </Panel>  
         </div> 
     </div>

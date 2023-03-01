@@ -11,6 +11,7 @@ const customStyles = {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
+      backgroundColor: '#0f172a',
     },
   };
 
@@ -31,9 +32,11 @@ const Header = (props) => {
         setModalIsOpen(false);
     }
     return (
-        <div className="Header flex bg-violet-700 fixed w-screen h-10">
-            <div className="h-24"><img className="flex-auto h-24" src = {logo}/></div>
-            <button className="flex-end mr-10 rounded bg-blue-500 hover:bg-blue-700 text-white font-bold" onClick={openModal}>About</button>
+        <div className="flex justify-between bg-black fixed w-screen h-20">
+            <div className="h-24"><img className=" h-24" src = {logo}/></div>
+            <div className="font-header font-bold text-3xl mt-5">FILMSTACK</div>
+            <div></div><div></div><div></div>
+            <button className=" w-20 h-10 mt-5 mr-10 rounded bg-blue-900 hover:bg-blue-700 font-bold" onClick={openModal}>About</button>
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
@@ -43,6 +46,9 @@ const Header = (props) => {
             >
                 <h1>About Our App</h1>
                 <h3>Authors: Mark Alwast & Sean Jamieson</h3>
+                <h3>https://v1.tailwindcss.com/components/forms: Input CSS</h3>
+                <h3>https://flowbite.com/docs/forms/range/: Range CSS</h3>
+                <h3>https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp: Scrollbar CSS</h3>
             </Modal>
         </div>
     )

@@ -78,7 +78,7 @@ const MovieDetails = (props) => {
                         onClick={closeModal} alt={`Larger poster of the film: ${props.movie.title}`}></img>
             </Modal>
             <Panel id="favorites">
-                <Favorites favorites={props.favorites}></Favorites>
+                <Favorites favorites={props.favorites} changeSelectedMovie={props.changeSelectedMovie} removeFavorite={props.removeFavorite}/>
             </Panel>
         </div>
     )
