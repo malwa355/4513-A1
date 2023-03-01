@@ -39,7 +39,13 @@ function App() {
   const rateMovie = (id, rating) => {
     const copyMovies = movies;
     const movieIndex = copyMovies.findIndex(m => m.id === id);
+
     copyMovies[movieIndex].userRating = rating;
+    copyMovies[movieIndex].ratings.count++;
+    //Changing the average rating to reflect the user's rating does not work,
+    //as the math results in a float that has a lower value, even if the user rated higher
+    //than the average.
+
     setMovies(copyMovies);
     console.log("updated " + rating);
   }
