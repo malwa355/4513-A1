@@ -1,14 +1,41 @@
-import React from "react";
+import React, {useState} from "react";
 import Header from "./Header.jsx";
 import {Link} from "react-router-dom";
 import Rating from "./Rating.jsx";
 import Favorites from "./Favorites.jsx";
 import Panel from "./Panel.jsx";
+import Modal from 'react-modal';
+
+const customStyles = {
+    content: {
+      width: '30%',
+      height:'auto',
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
+Modal.setAppElement(document.getElementById("root"));
 
 const MovieDetails = (props) => {
+    const [modalIsOpen, setModalIsOpen] = useState(false)
     console.log(props.movie);
     const favoriteHandler = ()=>{
         props.addFavorite(props.movie.id);
+    }
+    function openModal() {
+        setModalIsOpen(true);
+    }
+    function afterOpenModal() {
+        // references are now sync'd and can be accessed.
+
+    }
+    function closeModal() {
+        setModalIsOpen(false);
     }
     return (
         <div>
@@ -16,7 +43,8 @@ const MovieDetails = (props) => {
             <div>
                 <div>
                     <h1>{props.movie.title}</h1>
-                    <img className="w-40" src={`https://image.tmdb.org/movie/t/p/w780/${props.movie.poster}`} alt={`Poster of the film: ${props.movie.title}`}></img>
+                    <img className="w-40" src={`https://image.tmdb.org/movie/t/p/w342/${props.movie.poster}`}
+                        alt={`Poster of the film: ${props.movie.title}`} onClick={openModal}></img>
                 </div>
                 <div>
                     <div className="inline-grid grid-col-2">
@@ -39,6 +67,16 @@ const MovieDetails = (props) => {
                     <button onClick={favoriteHandler}><i className="fa-solid fa-heart" /*style={{color:"pink"}}*/></i> Add to Favs</button>
                 </div>
             </div>
+            <Modal
+                isOpen={modalIsOpen}
+                onAfterOpen={afterOpenModal}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Poster Modal"
+            >
+                <img src={`https://image.tmdb.org/movie/t/p/w780/${props.movie.poster}`}
+                        onClick={closeModal} alt={`Larger poster of the film: ${props.movie.title}`}></img>
+            </Modal>
             <Panel id="favorites">
                 <Favorites favorites={props.favorites}></Favorites>
             </Panel>
