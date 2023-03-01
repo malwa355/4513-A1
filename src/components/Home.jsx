@@ -13,7 +13,7 @@ const Home = (props) => {
         console.log("updated " + input);
     }
     const clearTermHandler = ()=> {
-        props.changeSearchTerm("");
+        props.changeSearchTerm(null);
         console.log("cleared search term");
     }
 
