@@ -1,3 +1,23 @@
+/**This is the major component of the default/movies view. It is a list of movie objects with their
+ * posters, and the functionality to sort the list.
+ * 
+ * The props that are passed to this Component are: 
+ * movies: The list of movie objects to be displayed in this Component.
+ * changeSelectedMovie: A drilled method that allows the clicked movie to open
+ *                      the movieDetailsView for that movie.
+ * addFavorite: A drilled method that allows the user to add a movie in the list
+ *              to the favorites bar.
+ * cleared: Tells if it is sorting on a column. Used to make it re-render after
+ *          sorting.
+ * setClear: Clears previous sorting done on the rendered list of movies.
+ * sort: A drilled method that changes the order of rendered movies based on
+ *       the selected column.
+ * sortDirection: Tells which direction to sort the rows.
+ * lastSorted: Tells which column was the last basis for sorting. This is so that
+ *             that column can be set back to the default.
+ * filterIsOpen: Tells whether the filter drawer is open.
+ * favoritesIsOpen: Tells whether the favorites drawer is open.
+ **/
 import React from "react";
 import MovieListItem from "./MovieListItem.jsx";
 import { useEffect } from "react";

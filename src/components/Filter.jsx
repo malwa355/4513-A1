@@ -1,3 +1,14 @@
+/**Filter is a drawer that allows the user to narrow the scope of their searches.
+ * As according to the specifications, the filters are mutually exclusive. The
+ * filter operates based on title, genre, years, and ratings.
+ * 
+ * The props that are passed to this Component are:
+ * filter: A method that takes an object to determine how to filter the movies.
+ * clear: A method to clear the filters.
+ * genreList: A list of the genres for the user to narrow the search.
+ * filterIsOpen: Says if the drawer is open or not.
+ * toggleFilter: Method for closing the drawer.
+ **/
 import { useState } from "react";
 
 const Filter = (props) => {

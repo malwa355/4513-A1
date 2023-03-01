@@ -1,3 +1,16 @@
+/**This Component is each entry in the list of movies. It allows the user to see
+ * the data on that movie, including the poster, title, year, rating, popularity,
+ * and the ability to add it as a favorite or open it.
+ * 
+ * The props that are passed to this Component are:
+ * key: index
+ * movie: The film object in question. This object holds all of the aforementioned
+ *        data.
+ * changeSelectedMovie: A drilled method that allows the user to click on this movie
+ *                      and see its information in the movieDetail view.
+ * addFavorite: A drilled method that allows the user to click on a button to add the
+ *              movie to their favorites list.
+ **/
 import React from "react";
 import {Link} from "react-router-dom";
 

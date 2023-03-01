@@ -1,3 +1,10 @@
+/**Movies is the main view of the application. As a view, it or its children
+ * return every component visible on screen. As such, it returns the header,
+ * filter panel, list of movies, and the favorites panel.
+ * 
+ * The props that are passed to this Component are only used in its children
+ * components. None of them are directly used in this Component.  
+ **/
 import React from "react";
 import Filter from "./Filter.jsx";
 import Header from "./Header.jsx";

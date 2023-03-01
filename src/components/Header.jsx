@@ -1,3 +1,7 @@
+/**Header sits at the top of the page. It features the logo, and an about button.
+ * 
+ * There is no complex functionality with this component, so it has no props:
+ **/
 import {useState} from "react";
 import {Link} from "react-router-dom";
 import ReactDOM from 'react-dom';
@@ -30,7 +34,6 @@ const Header = (props) => {
     }
     function afterOpenModal() {
         // references are now sync'd and can be accessed.
-
     }
     function closeModal() {
         setModalIsOpen(false);

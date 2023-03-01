@@ -1,3 +1,18 @@
+/**This Component allows the user to give a rating for a film. They use a range
+ * slider, and get a value that they then apply to the film through drilled methods.
+ * 
+ * The props that are passed to this Component are:
+ * movie: The object of the film being rated.
+ * rateMovie: A drilled method that allows the user to rate the film.
+ * updateAverageValueDisplay: This method is used in the Component above
+ *                            the rater in order to allow the count of
+ *                            rates to increase by one when the user gives 
+ *                            a rating. Originally we wanted to increase the
+ *                            average value as well, but because it is floating
+ *                            point math, it did not work at the small level we
+ *                            were working at.
+ * 
+ **/
 import React, {useState, setState} from "react";
 import Stars from "./Stars.jsx";
 
