@@ -19,8 +19,9 @@ function App() {
   const [filterIsOpen, setFilterIsOpen] = useState(true);
   const [favoritesIsOpen, setFavoritesIsOpen] = useState(true);
 
-  const changeSearchTerm = (searchTerm) => {
-    filter("title",{input:searchTerm});
+  const changeSearchTerm = (newSearchTerm) => {
+    setSearchTerm(newSearchTerm);
+    filter("title",{input:newSearchTerm});
   };
   const addFavorite = (movie) => {
     if (!favorites.find((m) => m.id === movie.id)) {
@@ -57,12 +58,18 @@ function App() {
   const filter = (field, term) => {
     console.log(field);
     console.log(term.inputLower);
+
     if (field === "title") {
-      setRenderedMovies(
-        movies.filter((m) =>
-          m.title.toLowerCase().includes(term.input.toLowerCase())
-        )
-      );
+      if(term.input.length>0){
+        setRenderedMovies(
+          movies.filter((m) =>
+            m.title.toLowerCase().includes(term.input.toLowerCase())
+          )
+        );
+      } else {
+        setRenderedMovies([]);
+      }
+
     } else if (field === "genre") {
       setRenderedMovies(
         movies.filter((m) =>
@@ -251,6 +258,7 @@ function App() {
             <Movies
               movies={renderedMovies}
               searchTerm={searchTerm}
+              changeSearchTerm={changeSearchTerm}
               changeSelectedMovie={changeSelectedMovie}
               favorites={favorites}
               addFavorite={addFavorite}

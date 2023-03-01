@@ -9,7 +9,7 @@ const Movies = (props) => {
   return (
     <div>
       <Header />
-      <div className="">
+      <div>
         <Panel id="filter">
           <Filter
             filter={props.filter}

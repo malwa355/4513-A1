@@ -65,6 +65,7 @@ const Filter = (props) => {
   };
   const handleClear = () => {
     props.clear();
+    setTitleInput("");
   };
   const handlePanel = () => {
     setPanelOpen(!panelOpen);
@@ -135,7 +136,7 @@ const Filter = (props) => {
           Year:
           <div className="flex flex-col justify-between">
             <label className="block ml-20 mt-[-21px]">
-              Less Than: {lowerYearInput}
+              After: {lowerYearInput}
               <input
                 type="range"
                 min="1940"
@@ -147,7 +148,7 @@ const Filter = (props) => {
               />
             </label>
             <label className="block ml-20">
-              Greater Than: {upperYearInput}
+              Before: {upperYearInput}
               <input
                 type="range"
                 min="1940"
@@ -170,7 +171,7 @@ const Filter = (props) => {
           />
           Rating:
           <label className="block ml-20 mt-[-21px]">
-            Less Than: {lowerRatingInput}
+            Greater Than: {lowerRatingInput}
             <input
               type="range"
               min="3"
@@ -182,7 +183,7 @@ const Filter = (props) => {
             />
           </label>
           <label className="block ml-20">
-            Greater Than: {upperRatingInput}
+            Less Than: {upperRatingInput}
             <input
               type="range"
               min="3"

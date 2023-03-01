@@ -1,14 +1,17 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import { useState, useEffect } from "react";
 
 
 const FavoritesItem = (props) => {
+
     const detailsHandler = () => {
         props.changeSelectedMovie(props.movie);
     }
     const removeFavoriteHandler = () => {
         props.removeFavorite(props.movie);
     }
+  
     return (
         <div>
             <Link to="/movieDetails" onClick={detailsHandler}  className="grid grid-cols-2">
