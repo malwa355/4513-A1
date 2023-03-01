@@ -1,4 +1,18 @@
-import { useState } from "react";
+/**
+ * Favorites object is the panel on the left side of the screen on the movies and movie detail views.
+ * It holds a list of FavoriteItems. The user has the ability to add and remove favorite films to this list.
+ * Once an item has been added, it cannot be added again.
+ * 
+ * The props that are passed to this Component are:
+ *  favorites: An array of movie objects.
+ *  changeSelectedMovie: A drilled function that allows the user to open movieDetail view
+ *                       from the favorites bar.
+ *  removeFavorite: removes movie object from the array.
+ *  favoritesIsOpen: Determines whether the drawer starts open or closed.
+ *  toggleFavorites: Allows the opening or closing of the drawer.
+ **/
+
+ import { useState } from "react";
 import FavoritesItem from "./FavoritesItem.jsx";
 
 const Favorites = (props) => {

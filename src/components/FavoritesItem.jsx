@@ -1,3 +1,13 @@
+/**The FavoriteItem Component is a film that sits in the favorites bar.
+ * It has methods to open the movieDetail view for that film, and to remove
+ * the film from the favorites bar.
+ * 
+ * The props that are passed to this Component are:
+ * movie: The film in question.
+ * key: index.
+ * changeSelectedMovie: A drilled method to change the film to view in detailed view.
+ * removeFavorite: A drilled method to remove the film from the list.
+ **/
 import React from "react";
 import {Link} from "react-router-dom";
 import { useState, useEffect } from "react";

@@ -1,3 +1,19 @@
+/**This Component/View is for displaying relevant data about a single movie. 
+ * This data includes, run time, ratings, title, poster, etc.
+ * 
+ * The props that are passed to this Component are:
+ * movie: A movie object for the film that the data belongs to.
+ * rateMovie: A drilled method used in the rater that is in another component
+ *            included in this view.
+ * addFavorite: A drilled method that allows the user to click a button on this
+ *              view, and add a movie to the favorites array in state.
+ * changeSelectedMovie: A drilled method that allows the user to change to a different
+ *                      movieDetails page. Used for the favorites bar, so those films 
+ *                      are clickable.
+ * removeFavorite: Used on the favorites bar to allow removal of films.
+ * favoriteIsOpen: Used to tell if the drawer is open or not.
+ * toggleFavorites: Method to toggle whether drawer is open or not.
+ **/
 import React, { useState } from "react";
 import Header from "./Header.jsx";
 import { Link } from "react-router-dom";

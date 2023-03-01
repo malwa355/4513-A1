@@ -1,3 +1,10 @@
+/**This is the first view for this single page application. It allows the user to search
+ * a title, or to just see all of the movies without filtering based on the title.
+ * 
+ *The props that are passed to this Component are: 
+ * changeSearchTerm: This is a drilled method that allows the search term to be changed
+ *                   in state before the movie list is made.
+ **/
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
