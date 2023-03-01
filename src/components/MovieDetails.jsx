@@ -44,7 +44,8 @@ const MovieDetails = (props) => {
                 <div>
                     <h1>{props.movie.title}</h1>
                     <img className="w-40" src={`https://image.tmdb.org/movie/t/p/w342/${props.movie.poster}`}
-                        alt={`Poster of the film: ${props.movie.title}`} onClick={openModal}></img>
+                        alt={`Poster of the film: ${props.movie.title}`} onClick={openModal}
+                        onError={(e) => {e.target.onerror=null; e.target.src='https://via.placeholder.com/342x502'}}></img>
                 </div>
                 <div>
                     <div className="inline-grid grid-col-2">
@@ -75,7 +76,8 @@ const MovieDetails = (props) => {
                 contentLabel="Poster Modal"
             >
                 <img src={`https://image.tmdb.org/movie/t/p/w780/${props.movie.poster}`}
-                        onClick={closeModal} alt={`Larger poster of the film: ${props.movie.title}`}></img>
+                        onClick={closeModal} alt={`Larger poster of the film: ${props.movie.title}`}
+                        onError={(e) => {e.target.onerror=null; e.target.src='https://via.placeholder.com/780x1145'}}></img>
             </Modal>
             <Panel id="favorites">
                 <Favorites favorites={props.favorites} changeSelectedMovie={props.changeSelectedMovie} removeFavorite={props.removeFavorite}/>

@@ -9,7 +9,7 @@ const Rater = (props) => {
         setInput(e.target.value);
     }
     const ratingSubmissionHandler = ()=> {
-        props.rateMovie(props.movie.id,input);
+        props.updateAverageValueDisplay(input);
         setFlag(input);
     }
 
