@@ -50,7 +50,7 @@ const MovieList = (props) => {
   };
   return (
     <div>
-      <h1 className="text-center fixed bg-dk-blue w-screen h-10 mt-[80px] z-0 font-bold text-xl">
+      <h1 className="text-center fixed bg-dk-blue w-screen h-10 mt-[80px] z-0 font-bold font-header text-xl">
         Movies
       </h1>
       <ul className={`inline-grid grid-cols-1 transition-all ${props.filterIsOpen === true ? 'ml-80' : 'ml-10'} ${props.favoritesIsOpen === true ? 'mr-80' : 'mr-0'} mt-32`}>
