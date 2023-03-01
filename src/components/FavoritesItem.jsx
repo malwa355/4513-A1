@@ -1,6 +1,9 @@
 /**The FavoriteItem Component is a film that sits in the favorites bar.
  * It has methods to open the movieDetail view for that film, and to remove
- * the film from the favorites bar.
+ * the film from the favorites bar. The fading functionality is heavily based on code from
+ * https://dev.to/jerocosio/how-to-animate-a-button-on-click-with-tailwindcss-in-next-js-or-react-js-30cl
+ * written by Jeronimo Cosio. We took his same idea, but instead of wiggle, we made a custom fade animation,
+ * and, in the onAnimationEnd event, we also have to remove the item from the favorites bar.
  * 
  * The props that are passed to this Component are:
  * movie: The film in question.
