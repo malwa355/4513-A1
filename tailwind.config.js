@@ -15,6 +15,22 @@ module.exports = {
         'sans': ['"Open Sans"','sans-serif'],
         'header': ['Heebo', 'sans-serif']
       },
+      keyframes: {
+        'fade' :{
+          '0%': {
+            opacity: '1'
+          },
+          '100%': {
+            opacity: '0'
+          },
+          'to': {
+            opacity: '0'
+          }
+        }
+      },
+      animation: {
+        'fade': 'fade 1s ease-out'
+      }
     }
   },
   plugins: [],
