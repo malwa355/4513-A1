@@ -220,7 +220,7 @@ function App() {
   };
   useEffect(() => {
     const url =
-      "https://www.randyconnolly.com/funwebdev/3rd/api/movie/movies-brief.php?limit=100";
+      "https://www.randyconnolly.com/funwebdev/3rd/api/movie/movies-brief.php?limit=200";
     const localMovies = JSON.parse(localStorage.getItem("movies"));
     if (!localMovies) {
       fetch(url)

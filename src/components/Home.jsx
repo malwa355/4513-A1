@@ -17,7 +17,6 @@ const Home = (props) => {
         console.log("cleared search term");
     }
 
-     
     return (
         <div className="bg-hero bg-cover flex justify-center items-center w-screen h-screen ">
             <div className="w-[550px] m-10 bg-dk-blue px-5 py-2 border-solid border-2 border-cyan-400">
@@ -35,7 +34,6 @@ const Home = (props) => {
             <div className="fixed right-5 bottom-5">Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com/photos/NbSBVBuwyJo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
         </div>
     )
-
 }
 
 export default Home;

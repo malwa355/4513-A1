@@ -8,7 +8,7 @@ const Filter = (props) => {
   const [titleInput, setTitleInput] = useState("");
   const [genreInput, setGenreInput] = useState("");
   const [upperYearInput, setUpperYearInput] = useState("2023");
-  const [lowerYearInput, setLowerYearInput] = useState("1940");
+  const [lowerYearInput, setLowerYearInput] = useState("1920");
   const [upperRatingInput, setUpperRatingInput] = useState("10");
   const [lowerRatingInput, setLowerRatingInput] = useState("0");
   const [panelOpen, setPanelOpen] = useState(true);
@@ -82,7 +82,7 @@ const Filter = (props) => {
           panelOpen === true ? "left-0" : "-left-72"
         }`}
       >
-        <h1 className="text-center mb-5 ml-5 font-header font-bold text-xl">
+        <h1 className="text-center mb-5 mt-2 ml-5 font-header font-bold text-2xl">
           Filter
         </h1>
         <label className="block  ml-5 mb-3">
@@ -139,7 +139,7 @@ const Filter = (props) => {
               After: {lowerYearInput}
               <input
                 type="range"
-                min="1940"
+                min="1920"
                 max="2023"
                 disabled={yearDisabled}
                 onChange={handleLowerYearChange}
@@ -151,7 +151,7 @@ const Filter = (props) => {
               Before: {upperYearInput}
               <input
                 type="range"
-                min="1940"
+                min="1920"
                 max="2023"
                 disabled={yearDisabled}
                 onChange={handleUpperYearChange}
@@ -213,7 +213,7 @@ const Filter = (props) => {
       <div
         className={`ease-in-out w-3 fixed ${
           panelOpen === true ? "left-[276px]" : "left-0"
-        } top-[120px] h-screen bg-slate-500 transition-all`}
+        } top-[120px] h-screen bg-cyan-600 hover:bg-cyan-400 transition-all`}
       >
         <button onClick={handlePanel} className="h-screen flex items-center">
           <i

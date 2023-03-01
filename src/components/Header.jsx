@@ -37,7 +37,7 @@ const Header = (props) => {
     }
     return (
         <div className="flex justify-between bg-black fixed w-screen h-20">
-            <Link to="/" className="h-24"><img className=" h-24" src = {logo}/></Link>
+            <Link to="/" className="h-24"><img className=" h-20" src = {logo}/></Link>
             <div className="font-header font-bold text-3xl mt-5">FilmStack</div>
             <div></div><div></div><div></div>
             <button className="w-20 h-10 mt-5 mr-10 rounded bg-cyan-600 hover:bg-cyan-400 font-bold" onClick={openModal}>About</button>

@@ -11,7 +11,7 @@ const Favorites = (props) => {
     <div>
       <div className={`transition-all ease-in-out fixed ${props.favoritesIsOpen === true ? 'right-[0px]': '-right-72'}`}>
       <div className={`bg-dk-blue mt-10 h-screen flex flex-col w-72 overflow-scroll no-scrollbar`}>
-        <h1 className="text-center mb-5 font-bold text-xl">Favorites</h1>
+        <h1 className="text-center mb-5 mt-2 font-bold font-header text-2xl">Favorites</h1>
         {props.favorites.map((f, i) => (
           <FavoritesItem
             movie={f}
@@ -25,7 +25,7 @@ const Favorites = (props) => {
       <div
         className={`ease-in-out w-3 fixed ${
           props.favoritesIsOpen === true ? "right-[276px]" : "right-0"
-        } top-[120px] h-screen bg-slate-500 transition-all`}
+        } top-[120px] h-screen bg-cyan-600 hover:bg-cyan-400 transition-all`}
       >
         <button onClick={handlePanel} className="h-screen flex items-center">
           <i
