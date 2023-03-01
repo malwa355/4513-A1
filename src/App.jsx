@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Home from "./components/Home.jsx";
 import Movies from "./components/Movies.jsx";
@@ -6,6 +5,7 @@ import MovieDetails from "./components/MovieDetails.jsx";
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { cloneDeep } from "lodash";
+import spinner from "./images/spinner2.gif";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -18,6 +18,7 @@ function App() {
   const [genreList, setGenreList] = useState([]);
   const [filterIsOpen, setFilterIsOpen] = useState(true);
   const [favoritesIsOpen, setFavoritesIsOpen] = useState(true);
+  const [loaded,setLoaded] = useState(false);
 
   const changeSearchTerm = (newSearchTerm) => {
     if(newSearchTerm===null) {
@@ -237,6 +238,7 @@ function App() {
           localStorage.setItem("movies", JSON.stringify(sortedAddedProperty));
 
           console.log("Got movies from API and stored it!");
+          setLoaded(true);
         })
         .catch((err) => console.error(err));
     } else {
@@ -245,9 +247,18 @@ function App() {
       getGenres(sortedLocalMovies);
       setRenderedMovies(sortedLocalMovies);
       console.log("Got movies from localStorage!");
+      setLoaded(true);
     }
   }, []);
 
+  if(!loaded){
+    return(
+      <div>
+        <img src={spinner}></img>
+      </div>
+    )
+  }
+  else{
   return (
     <main className="bg-slate-800">
       <Routes>
@@ -299,7 +310,7 @@ function App() {
         />
       </Routes>
     </main>
-  );
+  );}
 }
 
 export default App;
