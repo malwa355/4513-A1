@@ -19,8 +19,8 @@ function App() {
   const [filterIsOpen, setFilterIsOpen] = useState(true);
   const [favoritesIsOpen, setFavoritesIsOpen] = useState(true);
 
-  const changeSearchTerm = (newSearchTerm) => {
-    setSearchTerm(newSearchTerm);
+  const changeSearchTerm = (searchTerm) => {
+    filter("title",{input:searchTerm});
   };
   const addFavorite = (movie) => {
     if (!favorites.find((m) => m.id === movie.id)) {

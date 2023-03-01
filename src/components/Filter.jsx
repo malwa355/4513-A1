@@ -72,7 +72,7 @@ const Filter = (props) => {
   };
   return (
     <div
-      className={`bg-dk-blue h-screen ${
+      className={`bg-dk-blue h-screen transition-all ${
         panelOpen === true ? "w-72" : "w-0"
       } mt-10`}
     >

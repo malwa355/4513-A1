@@ -48,11 +48,13 @@ const MovieList = (props) => {
       }
     }
   };
-  return (
+ 
+  return ( 
     <div>
       <h1 className="text-center fixed bg-dk-blue w-screen h-10 mt-[80px] z-0 font-bold font-header text-xl">
         Movies
       </h1>
+      {props.movies.length > 0 ? 
       <ul className={`inline-grid grid-cols-1 transition-all ${props.filterIsOpen === true ? 'ml-80' : 'ml-10'} ${props.favoritesIsOpen === true ? 'mr-80' : 'mr-0'} mt-32`}>
         <li className="inline-grid grid-cols-7">
           <div></div>
@@ -95,6 +97,9 @@ const MovieList = (props) => {
           />
         ))}
       </ul>
+      : 
+        <ul className="inline-grid grid-cols-1 items-center w-screen mt-36"><li className="flex justify-center"><div className="flex flex-col "><i className="fa-solid fa-heart-crack text-8xl text-center"></i><div className="mt-5 text-xl ">Sorry, I Can't Find That Film</div></div></li></ul>
+       }
     </div>
   );
 };
