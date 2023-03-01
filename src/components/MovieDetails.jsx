@@ -25,7 +25,7 @@ const MovieDetails = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   console.log(props.movie);
   const favoriteHandler = () => {
-    props.addFavorite(props.movie.id);
+    props.addFavorite(props.movie);
   };
   function openModal() {
     setModalIsOpen(true);
@@ -36,6 +36,12 @@ const MovieDetails = (props) => {
   function closeModal() {
     setModalIsOpen(false);
   }
+  function conditionalFavorite() {
+    if(!props.favorites.find((m) => m.id === props.movie.id)) {
+        return(<button onClick={favoriteHandler}>
+               <i className="fa-solid fa-heart">
+               </i> Add to Favs</button>)}
+}
   return (
     <div>
       <Header />
