@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'hero': "url('../src/images/home4.jpg')",
+      },
       colors: {
         'dk-blue': '#0f172a',
       },
